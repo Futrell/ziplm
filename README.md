@@ -41,7 +41,7 @@ This works because of two facts:
 1. A language model is nothing but a distribution on the next token given previous tokens, $p(x \mid c)$.
 2. There is a general equivalence between *probability distributions* and *codes*.
 
-The second point is what makes this interesting. Information theory tells us that probability distributions for codes. That is, if I have some datapoints $x$, and I know that they follow probability distribution $p(x)$, I can come up with a lossless binary code to encode the $x$ where the length of each code is $-\log_2 p(x)$. This code minimizes the average code length: the only way to get shorter average code length would be to go into the realm of lossy compression. This is called the Shannon Limit.
+The second point is what makes this interesting. Information theory tells us that we can derive codes from probability distributions. That is, if I have some datapoints $x$, and I know that they follow probability distribution $p(x)$, I can come up with a lossless binary code to encode the $x$ where the length of each code is $-\log_2 p(x)$. This code minimizes the average code length: the only way to get shorter average code length would be to go into the realm of lossy compression. This is called the Shannon Limit.
 
 Since I can convert probability distributions to codes in this way, I can also convert codes to probability distributions. If I have a code (like gzip) that describes my datapoint with length $l(x)$ in binary, then that corresponds to a probability distribution $p(x) = 2^{-l(x)}$. If the code is $K$-ary, then the corresponding distribution is 
 $$p(x) = K^{-l(x)}.$$ 
