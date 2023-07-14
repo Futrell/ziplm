@@ -47,8 +47,8 @@ Since I can convert probability distributions to codes in this way, I can also c
 $$p(x) = K^{-l(x)}.$$ 
 
 The ZipLM model works by converting code lengths to probabilities in this way. If I have a vocabulary of size $K$, and a string $c$, then the probability distribution for continuations $x$ is:
-$$p(x \mid c) \propto K^{-l(cx)}.$$
-That's all there is to it.
+$$p(x \mid c) \propto K^{-l(cx)},$$
+where the proportionality reflects the fact that we have to sum over the compressed lengths of $cx^\prime$ for all $x^\prime$ in the vocabulary. That's all there is to it.
 
 
 
