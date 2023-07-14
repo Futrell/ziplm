@@ -35,7 +35,7 @@ model = ziplm.ZipModel(alphabet, compressor=lzma)
 "".join(model.sample_sequence(100)) # I get 'pvmucalppovpriitgztwbwgksgphhnhdf huykoppunlrh izjbokivpcx eagjqiyfmaibjconivxobcmipdccwqoyiwxzisgzx'
 ```
 
-## Why does this work?
+## Why does this "work"?
 
 This works because of two facts:
 1. A language model is nothing but a distribution on the next token given previous tokens, $p(x \mid c)$.
