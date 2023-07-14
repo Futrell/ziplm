@@ -6,7 +6,7 @@ import numpy as np
 import scipy.special
 
 class ZipModel:
-    def __init__(self, vocabulary, training="", conversion=np.log(2), compressor=gzip):
+    def __init__(self, vocabulary, training="", compressor=gzip):
         self.vocabulary = vocabulary
         self.training = training
         self.compressor = compressor
