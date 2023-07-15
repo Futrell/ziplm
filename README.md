@@ -52,7 +52,7 @@ where the proportionality reflects the fact that we have to sum over the compres
 
 ## How well does it work?
 
-It's pretty bad, but it doesn't generate total junk. Here I trained the gzip model in Moby Dick---from the Project Gutenberg text---and the output at least has some recognizable parts:
+It's pretty bad, but it doesn't generate total junk. Here I trained the gzip model in Moby Dick---from the [Project Gutenberg text](https://www.gutenberg.org/files/2701/2701-0.txt)---and the output at least has some recognizable parts:
 ```{python}
 data = open("mobydick.txt").read().lower()
 alphabet = "qwertyuiopasdghjkl;'zxcvbnm,. "
