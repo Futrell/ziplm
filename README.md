@@ -15,9 +15,9 @@ model = ziplm.ZipModel(alphabet, training=data)
 
 You can also run it without any training data, and just forward sample to see what kinds of patterns gzip likes:
 ```{python}
-alphabet = "qwertyuiopasdfghjklzxcvbnm "
+alphabet = "abc"
 model = ziplm.ZipModel(alphabet)
-"".join(model.sample_sequence(100)) # I get 'oodegeeup ewjlrm chuzjqvrm chukkzfcjmwndxnlrm o qewmxweqswdqrlfiuyxlygxkxinsvrwrfjr ywmzwc mxhqerxzy'
+"".join(model.sample_sequence(100)) # I get 'ccabcabcabcabcabcabcabcabcabcabcabcabcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbcbccabcbcbcbc'
 ```
 
 You can also get the probability for a sequence:
@@ -32,7 +32,7 @@ You can also try using `bz2` and `lzma` as language models by passing them as th
 ```{python}
 import lzma
 model = ziplm.ZipModel(alphabet, compressor=lzma)
-"".join(model.sample_sequence(100)) # I get 'pvmucalppovpriitgztwbwgksgphhnhdf huykoppunlrh izjbokivpcx eagjqiyfmaibjconivxobcmipdccwqoyiwxzisgzx'
+"".join(model.sample_sequence(100)) # I get 'cccbaaaaacccccabcacccbaaaaabaacaabaacaabaacaabaabacaaaaaaaaaaacccbabacaaaaaaaaaaaccccacaaccbaaaaaccc'
 ```
 
 ## Why does this "work"?
