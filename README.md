@@ -50,5 +50,21 @@ The ZipLM model works by converting code lengths to probabilities in this way. I
 $$p(x \mid c) \propto K^{-l(cx)},$$
 where the proportionality reflects the fact that we have to sum over the compressed lengths of $cx^\prime$ for all $x^\prime$ in the vocabulary. That's all there is to it.
 
+## How well does it work?
+
+It's pretty bad, but it doesn't generate total junk. Here I trained the gzip model in Moby Dick---from the Project Gutenberg text---and the output at least has some recognizable parts:
+```{python}
+data = open("mobydick.txt").read().lower()
+alphabet = "qwertyuiopasdghjkl;'zxcvbnm,. "
+model = ziplm.Model(alphabet, data)
+"".join(model.sample_sequence(100)) 
+```
+This gives me
+```{python}
+"ajbo.txh'tveutenberg.,cq'tvjdswcgtnebn y.;bqns qqwhrh'qeopsnownatqqrnd,eqwnwes;lsvusyixretsreqqnwnsr"
+```
+which at least seems to have some fragments of "Gutenberg" in there. 
+
+
 
 
