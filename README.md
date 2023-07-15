@@ -61,9 +61,9 @@ model = ziplm.Model(alphabet, data)
 ```
 This gives me
 ```{python}
-"ajbo.txh'tveutenberg.,cq'tvjdswcgtnebn y.;bqns qqwhrh'qeopsnownatqqrnd,eqwnwes;lsvusyixretsreqqnwnsr"
+"'theudcanvas. ;cm,zumhmcyoetter toauuo long a one aay,;wvbu.mvns. x the dtls and enso.;k.like bla.njv'"
 ```
-which at least seems to have some fragments of "Gutenberg" in there. 
+which at least seems to have "long a one" in it.
 
 
 
