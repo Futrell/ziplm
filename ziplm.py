@@ -6,10 +6,11 @@ import numpy as np
 import scipy.special
 
 class ZipModel:
-    def __init__(self, vocabulary, training="", compressor=gzip):
+    def __init__(self, vocabulary, training="", compressor=gzip, conversion=np.log(256)):
         self.vocabulary = vocabulary
         self.training = training
         self.compressor = compressor
+        self.conversion = conversion
         self.index = {v:i for i, v in enumerate(self.vocabulary)}
 
     def logprobs(self, prefix="", temperature=1):
@@ -17,7 +18,7 @@ class ZipModel:
             len(self.compressor.compress("".join([self.training, prefix, v]).encode()))
             for v in self.vocabulary
         ])
-        return scipy.special.log_softmax(-code_lengths*np.log(len(self.vocabulary))*(1/temperature))
+        return scipy.special.log_softmax(-code_lengths*self.conversion*(1/temperature))
                                          
     def sequence_logprob(self, sequence, prefix="", temperature=1):
         score = 0.0
